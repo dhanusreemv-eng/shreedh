@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanushree - Web Developer</title>
+    <meta name="description" content="Dhanushree's personal portfolio. Web Developer building ideas into reality.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Radar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "ogl": "https://unpkg.com/ogl@1.0.11/dist/ogl.mjs"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 17. Loader Animation -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-circle"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
+
+    <!-- 18. Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="custom-cursor-follower" class="custom-cursor-follower"></div>
+
+    <!-- 16. Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div id="scroll-progress" class="scroll-progress"></div>
+    </div>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">Dhanushree<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <!-- FloatingLines WebGL Background -->
+        <div id="hero-bg" class="lightfall-bg" aria-hidden="true"></div>
+        
+        <div class="hero-content">
+            <!-- Availability status -->
+            <div class="availability-badge">
+                <span class="avail-dot"></span>
+                Available for Opportunities
+            </div>
+            <!-- Location -->
+            <p class="hero-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Chennai, Tamil Nadu, India
+            </p>
+            <h3 class="greeting glow-text">Hello, I'm</h3>
+            <h1 class="name glow-text">Dhanushree</h1>
+            <!-- 1. Typing Effect -->
+            <h2 class="title">I am a <span id="typing-text" class="typing-text"></span><span class="cursor">|</span></h2>
+            <p class="tagline">Building Ideas Into Reality</p>
+
+            <!-- Role badges -->
+            <div class="hero-badges">
+                <span class="hero-badge"><i class="fas fa-paint-brush"></i> Creative Developer</span>
+                <span class="hero-badge"><i class="fas fa-lightbulb"></i> Problem Solver</span>
+            </div>
+
+            <!-- Sub-tagline -->
+            <p class="hero-sub">I build modern web experiences.</p>
+
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary cta-btn">View Projects</a>
+                <a href="#" class="btn btn-outline cta-btn">Download Resume</a>
+                <a href="#contact" class="btn btn-contact cta-btn"><i class="fas fa-paper-plane"></i> Contact Me</a>
+            </div>
+
+            <!-- Social icons -->
+            <div class="hero-socials">
+                <a href="https://linkedin.com/in/dhanushree-dev" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:dhanusree@gmail.com" class="social-icon" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+918870719654" class="social-icon" aria-label="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <!-- Profile with orbiting skill badges -->
+            <div class="orbit-wrapper">
+
+                <!-- Skill orbit badges -->
+                <div class="orbit-badge orbit-top">
+                    <i class="fas fa-palette"></i> UI / UX
+                </div>
+                <div class="orbit-badge orbit-right">
+                    <i class="fas fa-robot"></i> AI
+                </div>
+                <div class="orbit-badge orbit-bottom">
+                    <i class="fab fa-java"></i> Java
+                </div>
+
+<!-- 3. Floating Profile & 4. Glow Animation -->
+                <div class="profile-container" id="profile-card">
+                    <div class="profile-glow" id="dynamic-glow"></div>
+                    <div class="profile-img-placeholder">
+                        <img src="profile.png" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text glass-card">
+                    <p>Dhanushree is a passionate BE Computer Science (Cyber Security) student at Rrase College of Engineering. She enjoys building real-world web applications and continuously improving her development skills through hands-on projects.</p>
+                    <p>She is currently seeking opportunities in internships and freelancing to gain practical experience and grow as a professional developer.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                        <!-- Animated using JS -->
+                        <h3 class="stat-number" data-target="5">0</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="stat-number" data-target="8">0</h3>
+                        <p>Technologies Learned</p>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                        <h3 class="stat-number" data-target="200">0</h3>
+                        <p>Days Learning Streak</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <div class="skills-grid">
+                
+                <div class="skills-category glass-card tilt-card">
+                    <h3>Core Technologies</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML & CSS (Advanced)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <!-- 6. Skill Bar Animation -->
+                            <div class="skill-bar-fill" data-width="95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript (Intermediate)</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Java (Intermediate)</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python (Basic)</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category glass-card tilt-card tools">
+                    <h3>Tools & Platforms</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item hover-glow">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tool-item hover-glow">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="tool-item hover-glow">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-card tilt-card project-interactive expense-featured">
+                    <div class="project-featured-badge expense-badge">
+                        <i class="fas fa-chart-pie"></i> Finance App
+                    </div>
+                    <div class="project-img-wrapper zoom-wrapper" style="height: 260px;">
+                        <img src="project1.jpg" alt="Expense Tracker App UI" class="project-img" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+                        <div class="expense-shimmer-overlay"></div>
+                        <div class="project-overlay">
+                            <button class="btn btn-primary open-modal-btn" data-project="1">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3><i class="fas fa-wallet" style="color:#8B5CF6;margin-right:0.4rem;"></i>Expense Tracker</h3>
+                        <p>Smart finance app with budget goals, donut charts &amp; real-time transaction tracking</p>
+                        <div class="tech-badges">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span class="badge-finance">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card tilt-card project-interactive attendance-featured">
+                    <div class="project-featured-badge">
+                        <i class="fas fa-fingerprint"></i> Featured Project
+                    </div>
+                    <div class="project-img-wrapper zoom-wrapper" style="height: 260px;">
+                        <img src="project2.jpg" alt="Attendance Tracker - Biometric Face Recognition" class="project-img" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+                        <div class="project-scan-overlay">
+                            <div class="scan-line"></div>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="btn btn-primary open-modal-btn" data-project="2">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3><i class="fas fa-user-check" style="color:var(--neon-blue);margin-right:0.4rem;"></i>Attendance Tracker</h3>
+                        <p>AI-powered biometric attendance system with real-time face recognition &amp; Firebase cloud sync</p>
+                        <div class="tech-badges">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                            <span class="badge-ai">Biometric</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card tilt-card project-interactive portfolio-featured">
+                    <div class="project-featured-badge portfolio-badge">
+                        <i class="fas fa-laptop-code"></i> Portfolio
+                    </div>
+                    <div class="project-img-wrapper zoom-wrapper" style="height: 260px;">
+                        <img src="project3.jpg" alt="Portfolio Website" class="project-img" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+                        <div class="portfolio-grid-overlay"></div>
+                        <div class="project-overlay">
+                            <button class="btn btn-primary open-modal-btn" data-project="3">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3><i class="fas fa-globe" style="color:#10B981;margin-right:0.4rem;"></i>Portfolio Website</h3>
+                        <p>Stunning interactive portfolio with WebGL backgrounds, custom cursor &amp; glassmorphism UI</p>
+                        <div class="tech-badges">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span class="badge-portfolio">WebGL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Certifications</span></h2>
+            <div class="certifications-grid cert-text-grid">
+
+                <div class="cert-card glass-card tilt-card">
+                    <div class="cert-icon-wrap">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3>Web Development Certification</h3>
+                        <p>Completed comprehensive training covering HTML, CSS, and JS</p>
+                        <div class="tech-badges">
+                            <span>2025</span>
+                            <button class="verified-btn"><i class="fas fa-check-circle"></i> Verified</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-card tilt-card">
+                    <div class="cert-icon-wrap">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3>Java Programming Course</h3>
+                        <p>Advanced concepts in Java and Object Oriented Programming</p>
+                        <div class="tech-badges">
+                            <span>2025</span>
+                            <button class="verified-btn"><i class="fas fa-check-circle"></i> Verified</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card glass-card tilt-card">
+                    <div class="cert-icon-wrap">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="cert-body">
+                        <h3>200 Days Coding Challenge</h3>
+                        <p>Consistent daily coding and problem-solving streak</p>
+                        <div class="tech-badges">
+                            <span>Hackathon</span>
+                            <button class="verified-btn"><i class="fas fa-check-circle"></i> Verified</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Project Modal (Hidden by default) -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Education & Achievements Section -->
+    <section id="education" class="education section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Education & <span class="highlight">Achievements</span></h2>
+            
+            <div class="timeline" id="education-timeline">
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content glass-card hover-glow">
+                        <h3>BE CSE (Cyber Security)</h3>
+                        <h4>Rrase College of Engineering</h4>
+                        <p class="timeline-date">2024 – 2028</p>
+                        <p>Currently pursuing undergraduate studies with focus on core computer science and cyber security.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content glass-card hover-glow">
+                        <h3>Web Development Certification</h3>
+                        <p class="timeline-date">2025</p>
+                        <p>Completed comprehensive web development training covering front-end technologies.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content glass-card hover-glow">
+                        <h3>Java Programming Course</h3>
+                        <p class="timeline-date">2025</p>
+                        <p>Advanced concepts in Java and Object Oriented Programming.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content glass-card hover-glow">
+                        <h3>Hackathon & Challenges</h3>
+                        <p>Active participant in competitive hackathons and completed a 200 Days Coding Challenge streak.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Get in <span class="highlight">Touch</span></h2>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info glass-card">
+                    <h3>Contact Information</h3>
+                    <div class="info-item hover-glow">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:dhanusree@gmail.com">dhanusree@gmail.com</a>
+                    </div>
+                    <div class="info-item hover-glow">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+918870719654">+91 8870719654</a>
+                    </div>
+                    <div class="info-item hover-glow">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/dhanushree-dev" target="_blank">linkedin.com/in/dhanushree-dev</a>
+                    </div>
+                    <div class="info-item hover-glow">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/dhanushree-dev" target="_blank">github.com/dhanushree-dev</a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form glass-card">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        <span class="error-msg" id="name-error">Name is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email">
+                        <span class="error-msg" id="email-error">Valid email is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+                        <span class="error-msg" id="msg-error">Message cannot be empty</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <span class="submit-text">Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <!-- 13. Submit Animation Visual -->
+                    <div class="form-success-msg" id="form-success">
+                        <i class="fas fa-check-circle"></i> Message Sent Successfully!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-card">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Dhanushree. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JS -->
+    <script src="floatinglines.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
